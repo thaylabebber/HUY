@@ -1,0 +1,54 @@
+ body { margin: 0; padding: 16px; background: #dde2d0; color: #1c2733; font-family: Georgia, serif; }
+
+  /* A caixa de madeira da máquina */
+  .maquina {
+    max-width: 520px; margin: 0 auto; padding: 18px 12px;
+    background: #3a2f22; color: #e8e0cc;
+    border: 4px solid #9a7a2e; border-radius: 14px;
+    box-shadow: 0 8px 0 #1f1810;                /* "sombra dura" que dá ideia de espessura */
+  }
+  h1 { font: 700 22px "Courier New", monospace; text-align: center; margin: 0 0 14px; color: #d1ad57; }
+  .dica { text-align: center; font-size: 14px; margin: 0 0 14px; }
+
+  /* As 3 janelinhas dos rotores */
+  .janelas { display: flex; gap: 10px; justify-content: center; margin-bottom: 16px; }
+  .janelas input {
+    width: 52px; height: 52px; text-align: center; text-transform: uppercase;
+    font: 700 28px "Courier New", monospace;
+    background: #f1ecd8; color: #1c2733; border: 3px solid #9a7a2e; border-radius: 6px;
+  }
+
+  /* Cada fileira de lâmpadas ou de teclas */
+  .fileira { display: flex; justify-content: center; gap: 6px; margin-bottom: 6px; }
+
+  /* Lâmpadas e teclas compartilham o mesmo tamanho e formato (círculo) */
+  .lampada, .tecla {
+    width: min(8.6vw, 42px); height: min(8.6vw, 42px);   /* min(): o menor valor entre os dois (cabe no celular) */
+    box-sizing: border-box; border-radius: 50%;
+    display: grid; place-items: center;                   /* centraliza a letra */
+    font: 700 16px "Courier New", monospace;
+  }
+
+  .lampada { background: #15110c; color: #5b5444; border: 2px solid #5b5444; transition: all .15s; }
+  /* A classe "acesa" é adicionada e removida pelo JavaScript */
+  .lampada.acesa {
+    background: #ffc94d; color: #2a1d00; border-color: #ffc94d;
+    box-shadow: 0 0 14px 5px rgba(255, 201, 77, .8);      /* o brilho */
+  }
+
+  #teclado { margin-top: 14px; }
+  .tecla { background: #232a31; color: #cfd3c6; border: 2px solid #8a8f86; cursor: pointer; padding: 0; }
+  .tecla:active, .tecla.pressionada { transform: translateY(2px) scale(.93); background: #3a444d; }
+
+  /* Painéis de texto */
+  .rotulo { font-size: 13px; margin: 14px 0 4px; color: #d1ad57; }
+  .linha {
+    min-height: 1.4em; padding: 8px 10px; border-radius: 6px;
+    background: #15110c; color: #ffc94d;
+    font: 16px "Courier New", monospace; letter-spacing: 2px; word-break: break-all;
+  }
+  .acao {
+    display: block; margin: 16px auto 0; padding: 8px 18px; cursor: pointer;
+    font: 700 14px "Courier New", monospace;
+    background: #9a7a2e; color: #fff; border: 0; border-radius: 6px;
+  }
